@@ -9,69 +9,78 @@ html, body {
   height: 100%;
   background: transparent;
 }
+
 @keyframes typing {
-    from { width: 0 ;}
-  to {width:100%;}
-
-}
-.py{
-  font-family: monospace;
-
-}
-.containerx{
-  display:inline-block;
-
-
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
+.mypic {
+  border-radius: 50%;
+}
+
+.big_container {
+  max-width: 700px;
+}
+
+.containerx {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.strval {
+  font-family: inherit;
+  font-size: inherit;
+  color: green;
+}
+
+.hidethis {
+  visibility: hidden;
+}
+
+.hidethis.nomore {
+  visibility: visible;
+}
 
 .content {
-    visibility: hidden;
-    white-space:nowrap;
-    overflow:hidden;
-    width:0;
-
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 110%;
+  visibility: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
 }
 
-.content.part1{
+.content.part1 {
   visibility: visible;
-  animation: typing 1s steps(34,end);
+  animation: typing 0.5s steps(18, end);
   animation-fill-mode: forwards;
 }
-.content.part2{
+
+.content.part2 {
   visibility: visible;
-  animation: typing 1s steps(34,end);
+  animation: typing 0.5s steps(24, end);
   animation-fill-mode: forwards;
 }
-.content.part3{
+
+.content.part3 {
   visibility: visible;
-  animation: typing 1s steps(34,end);
+  animation: typing 0.5s steps(24, end);
   animation-fill-mode: forwards;
 }
-.content.part4{
-  visibility: visible;
-  animation: typing 1s steps(34,end);
-  animation-fill-mode: forwards;
-}
-.content.part5{
-  visibility: visible;
-  animation: typing 1s steps(34,end);
-  animation-fill-mode: forwards;
-}
-.content.part6{
-  visibility: visible;
-  animation: typing 1s steps(34,end);
-  animation-fill-mode: forwards;
-}
-.scramble{
+
+.scramble {
   color: white;
   font-family: 'Ubuntu';
   font-size: 45px;
   height: 10vh;
   margin-top: 10px
-
 }
-
 
 .container {
   padding-top: 50px;
@@ -103,9 +112,6 @@ h1, h2, h3, h4, h5, h6, p {
   top: 50%;
   transform: translateY(-50%);
 }
-
-
-
 
 .fill {
   width: 100%;

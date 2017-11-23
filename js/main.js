@@ -11,13 +11,12 @@ $(document).ready(function() {
 
   var interval = setInterval(function() {
     if (el.style.visibility == 'visible') {
-      var typetext = document.getElementsByClassName('content');
-
-      for (var i = 0; i < typetext.length; i++) {
-        assign(typetext[i], i);
+      var conts=document.getElementsByClassName('content');
+      var desc=document.getElementsByClassName('hidethis');
+      for (var i=0;i<conts.length;i++){
+        assign(conts[i],desc[i],i);
 
       }
-
 
 
       clearInterval(interval);
@@ -26,10 +25,17 @@ $(document).ready(function() {
 
 })
 
-function assign(a, i) {
+function assign(a,b, i) {
   setTimeout(function() {
     a.classList.add("part" + (i + 1).toString());
+
   }, i*1000);
+  setTimeout(function() {
+    b.classList.add('nomore');
+    b.classList.add('animated');
+    b.classList.add('fadeInUp');
+
+  }, i*1000+500);
 }
 $(".square").css('height', $(".square").parent().find('.m9').height() * 1.5)
 $(".square").css('width', $(".square").height())
