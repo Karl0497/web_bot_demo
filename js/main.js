@@ -4,17 +4,15 @@ new WOW().init();
 tan = 360 - parseInt(Math.atan($(window).height() * .2 / $(window).width()) * 180 / 3.14)
 
 $(document).ready(function() {
-  $(".rotated").css('-ms-transform', 'rotate(' + tan + 'deg)') /* IE 9 */
-  $(".rotated").css('-webkit-transform', 'rotate(' + tan + 'deg)') /* IE 9 */
-  $(".rotated").css('transform', 'rotate(' + tan + 'deg)') /* IE 9 */
+
   var el = document.getElementsByClassName('big_container')[0];
 
   var interval = setInterval(function() {
     if (el.style.visibility == 'visible') {
-      var conts=document.getElementsByClassName('content');
-      var desc=document.getElementsByClassName('hidethis');
-      for (var i=0;i<conts.length;i++){
-        assign(conts[i],desc[i],i);
+      var conts = document.getElementsByClassName('content');
+      var desc = document.getElementsByClassName('hidethis');
+      for (var i = 0; i < conts.length; i++) {
+        assign(conts[i], desc[i], i);
 
       }
 
@@ -25,17 +23,31 @@ $(document).ready(function() {
 
 })
 
-function assign(a,b, i) {
+function openChat() {
+  var frame = document.getElementById("chat-frame");
+  frame.className = "";
+  var img = document.getElementById("chat-button");
+  img.className = "hide";
+}
+
+function closeChat() {
+  var frame = document.getElementById("chat-frame");
+  frame.className = "hide";
+  var img = document.getElementById("chat-button");
+  img.className = "";
+}
+
+function assign(a, b, i) {
   setTimeout(function() {
     a.classList.add("part" + (i + 1).toString());
 
-  }, i*1000);
+  }, i * 1000);
   setTimeout(function() {
     b.classList.add('nomore');
     b.classList.add('animated');
     b.classList.add('fadeInUp');
 
-  }, i*1000+500);
+  }, i * 1000 + 500);
 }
 $(".square").css('height', $(".square").parent().find('.m9').height() * 1.5)
 $(".square").css('width', $(".square").height())
